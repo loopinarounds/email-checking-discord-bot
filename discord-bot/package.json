@@ -1,0 +1,30 @@
+{
+  "name": "email-checker-discord-bot",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "register": "node -r dotenv/config discord/register.js",
+    "bot": "infisical run -- node -r dotenv/config discord/index.js",
+    "start": "node -r dotenv/config discord/index.js",
+    "clean": "git clean -xdf tsconfig.tsbuildinfo .turbo node_modules",
+    "--lint": "eslint --cache .",
+    "--lint:fix": "eslint --cache --fix .",
+    "next:lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
+    "next:lint:fix": "dotenv -v SKIP_ENV_VALIDATION=1 next lint --fix",
+    "--type-check": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/withevideo/email-checker.git"
+  },
+  "author": "Bradley Weaver",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.6.0",
+    "discord-api-types": "^0.37.36",
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.2"
+  }
+}
